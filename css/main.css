@@ -1,0 +1,55 @@
+html, body{
+  height: 100%;
+}
+
+body { 
+			background-image: url(../images/background.jpg) ;
+			background-position: center center;
+			background-repeat:  no-repeat;
+			background-attachment: fixed;
+			background-size:  cover;
+			background-color: #999;
+  
+}
+/* Pikachu img style */
+.pikachuImg {
+	position: absolute;
+	top: 470px;
+	left: 65%
+}
+
+.pikachuImg img {
+	height: 170px;
+	width: auto;
+}
+/* Charmander img style */
+.charmanderImg {
+	position: absolute;
+	top: 470px;
+	left: 10%;
+}
+
+.charmanderImg img {
+	height: 150px;
+	width: auto;
+	transform: scaleX(-1);
+}
+
+/* pokemon box of choices style */
+.attackBox1 {
+	position: absolute;
+	top: 280px;
+	left:10%;
+	width: 270px;
+}
+
+.attackBox2 {
+	position: absolute;
+	top: 280px;
+	left:70%;
+	width: 270px;
+}
+
+.namepoke {
+	float: right;
+}
