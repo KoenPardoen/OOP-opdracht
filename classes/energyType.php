@@ -6,4 +6,5 @@ class EnergyType
     const WATER = 'Water';
     const ELECTRIC = 'Electric';
     const GRASS = 'Grass';
+    const FIGHTING = 'Fighting';
 }

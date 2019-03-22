@@ -2,13 +2,6 @@
 class Pikachu extends Pokemon{
     function __construct()
     {
-        $this->name = "Pikachu"; 
-        $this->energyType = EnergyType::ELECTRIC;
-        $this->hitpoints = 60; 
-        $this->health = 60; 
-        $this->addAttack("Electric Ring", 50);
-        $this->addAttack("Pika Punch", 20);
-        $this->weakness = "Fire"; 
-        $this->resistance = "Fighting"; 
+        parent::__construct("Pikachu", EnergyType::ELECTRIC, 60, 60, ["Electric Ring" => new Attack("Electric Ring", 50), "Pika Punch" => new Attack("Pika Punch", 20)], Weakness::FIRE, Resistance::FIGHTING);
     }
 }

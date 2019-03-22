@@ -6,6 +6,7 @@ class Resistance
      const WATER = 'Water';
      const ELECTRIC = 'Electric';
      const GRASS = 'Grass';
+     const FIGHTING = 'Fighting';
      
      public $value;
 }

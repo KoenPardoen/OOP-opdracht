@@ -2,8 +2,10 @@
 spl_autoload_register(function ($class) {
     include 'classes/' . $class . '.php';
 });
-    $pikachu = new Pikachu;
+    $pikachu = new Pikachu ;
     $charmander = new Charmander;
+
+    $pikachu->attackPokemon($pikachu, $charmander->attacks["Head Butt"])
 ?>
 <!doctype html>
 <html lang="en">
@@ -35,7 +37,7 @@ spl_autoload_register(function ($class) {
             <?php
                 foreach($charmander->attacks as $attack){
             ?>
-                <button type="button" class="btn btn-outline-secondary"><?php echo $attack->name?></button>
+                <button type="button" name="pokemonAttack" value="pokemonAttack" class="btn btn-outline-secondary"><?php echo $attack->name?></button>
 
             <?php
                 }
@@ -44,7 +46,7 @@ spl_autoload_register(function ($class) {
         </div>
 
         <div class="card attackBox2">
-            <h5 class="card-header">HP<?php echo $charmander->health?><span class="namepoke"><?php echo $pikachu->name?></span></h5>
+            <h5 class="card-header">HP<?php echo $pikachu->health?><span class="namepoke"><?php echo $pikachu->name?></span></h5>
             <div class="card-body">
             <?php 
                 foreach($pikachu->attacks as $attack){
@@ -58,10 +60,8 @@ spl_autoload_register(function ($class) {
 
         <div class="pikachuImg"><img src="images/pikachu.gif" alt="pikachu"></div>
         <div class="charmanderImg"><img src="images/charmander.gif" alt="pikachu"></div>
-
-    </main>
-
-    <?php var_dump($pikachu) ?>
+        
+    </main>     
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"

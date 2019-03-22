@@ -6,6 +6,7 @@ class Weakness
     const WATER = 'Water';
     const ELECTRIC = 'Electric';
     const GRASS = 'Grass';
+    const FIGHTING = 'Fighting';
 
-    public $multiplier;
+    //if opponent energytype is the same as pokemon weakness energytype multiplier increased
 }
