@@ -21,7 +21,9 @@ class Pokemon {
     }
     
     public function attackPokemon($target, $attack){
+        // if else check on pokemon weakness
         if ($target->weakness->energyType == $this->energyType){
+            // new damage value based on target weakness
             $damage = $attack->hitpoints * $target->weakness->value;
             $target->health -= $damage; 
         } else {

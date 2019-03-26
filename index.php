@@ -1,7 +1,10 @@
 <?php
+// classes loader
 spl_autoload_register(function ($class) {
     include 'classes/' . $class . '.php';
 });
+
+// new pokemons
     $pikachu = new Pikachu("pikaki") ;
     $charmander = new Charmander("charnazi");
 ?>
@@ -21,6 +24,7 @@ spl_autoload_register(function ($class) {
 </head>
 
 <body>
+
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
             <img src="images/pokeball.png" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -28,6 +32,7 @@ spl_autoload_register(function ($class) {
         </a>
     </nav>
     <main>
+    <!-- pokemon battle lines -->
         <div class="card w-75 attackLine">
             <div class="card-body ">
                 <h5 class="card-title">Attack line</h5>
