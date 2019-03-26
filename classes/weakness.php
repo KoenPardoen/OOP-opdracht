@@ -1,12 +1,11 @@
 <?php 
 class Weakness
 {
-    //energyTypes
-    const FIRE = 'Fire';
-    const WATER = 'Water';
-    const ELECTRIC = 'Electric';
-    const GRASS = 'Grass';
-    const FIGHTING = 'Fighting';
+    public $energyType;
+    public $value;
 
-    //if opponent energytype is the same as pokemon weakness energytype multiplier increased
+    public function __construct($energyType, $value){
+        $this->energyType = $energyType;
+        $this->value = $value;
+    }
 }

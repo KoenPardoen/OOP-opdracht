@@ -21,8 +21,16 @@ class Pokemon {
     }
     
     public function attackPokemon($target, $attack){
-        $target->health -= $attack->hitpoints; 
-        
+        if ($target->weakness->energyType == $this->energyType){
+            $damage = $attack->hitpoints * $target->weakness->value;
+            $target->health -= $damage; 
+        } else {
+            $target->health -= $attack->hitpoints; 
+        }
+    }
+
+    public function getHealth(){
+        return $this->name . "'s health is " . $this->health;
     }
 
 }
