@@ -1,17 +1,17 @@
 <?php 
 
-class Pokemon {
-    public $name;
-    public $energyType;
-    public $hitpoints;
-    public $health;
-    public $attacks = [];
-    public $weakness;
-    public $resistance;
-
+abstract class Pokemon {
+    // private maken kunnen oproepen met een __get($property)
+    protected $name; 
+    protected $energyType;
+    protected $health;
+    protected $attacks = [];
+    protected $weakness;
+    protected $resistance;
+   
       public function __construct($name, $energyType, $hitpoints, $health, $attacks, $weakness, $resistance)
     {
-        $this->name = $name; 
+        $this->name = $name;
         $this->energyType = $energyType;
         $this->hitpoints = $hitpoints; 
         $this->health = $health; 
@@ -20,21 +20,37 @@ class Pokemon {
         $this->resistance = $resistance; 
     }
     
-    public function attackPokemon($target, $attack){
+    public function takeDamage($hitpoints, $energyType){
         // if else check on pokemon weakness
-        if ($target->weakness->energyType == $this->energyType){
+        if ($energyType == $this->weakness->energyType){
             // new damage value based on target weakness
-            $damage = $attack->hitpoints * $target->weakness->value;
-            $target->health -= $damage; 
-        } else {
-            $target->health -= $attack->hitpoints; 
+            $damage = $hitpoints * $this->weakness->value;
+            $this->health -= $damage; 
+        } elseif($this->resistance->energyType == $energyType) {
+            $damage = $hitpoints - $target->resistance->value;
+            $this->health -= $damage; 
         }
+        else {
+            $this->health -= $attack->hitpoints; 
+        }
+
+    }
+
+    public function attackPokemon($target, $attack){
+        $target->takeDamage($attack->hitpoints, $this->energyType);
     }
 
     public function getHealth(){
         return $this->name . "'s health is " . $this->health;
     }
-
+    
+    public function getAttack($attackName){
+        return $this->attacks[$attackName];
+    }
+    
+    public function getName(){
+        return $this->name;
+    }
 }
 
 

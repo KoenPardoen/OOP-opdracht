@@ -5,8 +5,8 @@ spl_autoload_register(function ($class) {
 });
 
 // new pokemons
-    $pikachu = new Pikachu("pikaki") ;
-    $charmander = new Charmander("charnazi");
+    $pikachu = new Pikachu("Pikaki");
+    $charmander = new Charmander("charmani");
 ?>
 <!doctype html>
 <html lang="en">
@@ -37,48 +37,16 @@ spl_autoload_register(function ($class) {
             <div class="card-body ">
                 <h5 class="card-title">Attack line</h5>
                 <p class="card-text"><?php echo $pikachu->getHealth()?></p>
-                <?php  $charmander->attackPokemon($pikachu, $charmander->attacks["Head Butt"]) ?>
-                <p class="card-text"><?php echo $pikachu->name . " has been attacked"?></p>
+                <?php  $charmander->attackPokemon($pikachu, $charmander->getAttack("Head Butt")) ?>
+                <p class="card-text"><?php echo $pikachu->getName() . " has been attacked"?></p>
                 <p class="card-text"><?php echo $pikachu->getHealth()?></p>
 
                 <p class="card-text"><?php echo $charmander->getHealth()?></p>
-                <?php  $pikachu->attackPokemon($charmander, $pikachu->attacks["Pika Punch"]) ?>
-                <p class="card-text"><?php echo $charmander->name . " has been attacked"?></p>
+                <?php  $pikachu->attackPokemon($charmander, $pikachu->getAttack("Pika Punch")) ?>
+                <p class="card-text"><?php echo $charmander->getName() . " has been attacked"?></p>
                 <p class="card-text"><?php echo $charmander->getHealth()?></p>
-
             </div>
         </div>
-
-        <div class="card attackBox1">
-            <h5 class="card-header">HP<?php echo $charmander->health?><span
-                    class="namepoke"><?php echo $charmander->name?></span></h5>
-            <div class="card-body">
-                <?php
-                foreach($charmander->attacks as $attack){
-            ?>
-                <button type="button" name="pokemonAttack" value="pokemonAttack"
-                    class="btn btn-outline-secondary"><?php echo $attack->name?></button>
-
-                <?php
-                }
-            ?>
-            </div>
-        </div>
-
-        <div class="card attackBox2">
-            <h5 class="card-header">HP<?php echo $pikachu->health?><span
-                    class="namepoke"><?php echo $pikachu->name?></span></h5>
-            <div class="card-body">
-                <?php 
-                foreach($pikachu->attacks as $attack){
-            ?>
-                <button type="button" class="btn btn-outline-secondary"><?php echo $attack->name?></button>
-                <?php
-                }
-           ?>
-            </div>
-        </div>
-
         <div class="pikachuImg"><img src="images/pikachu.gif" alt="pikachu"></div>
         <div class="charmanderImg"><img src="images/charmander.gif" alt="pikachu"></div>
     </main>

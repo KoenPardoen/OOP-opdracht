@@ -16,7 +16,7 @@ body {
 /* Pikachu img style */
 .pikachuImg {
 	position: absolute;
-	top: 470px;
+	bottom: 30px;
 	left: 65%
 }
 
@@ -28,7 +28,7 @@ body {
 /* Charmander img style */
 .charmanderImg {
 	position: absolute;
-	top: 470px;
+	bottom: 34px;
 	left: 10%;
 }
 
@@ -36,25 +36,6 @@ body {
 	height: 150px;
 	width: auto;
 	transform: scaleX(-1);
-}
-
-/* pokemon box of choices style */
-.attackBox1 {
-	position: absolute;
-	top: 280px;
-	left: 20%;
-	width: 270px;
-}
-
-.attackBox2 {
-	position: absolute;
-	top: 280px;
-	left: 70%;
-	width: 270px;
-}
-
-.namepoke {
-	float: right;
 }
 
 /* Attack line box */
