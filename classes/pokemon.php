@@ -9,7 +9,7 @@ abstract class Pokemon {
     protected $weakness;
     protected $resistance;
    
-      public function __construct($name, $energyType, $hitpoints, $health, $attacks, $weakness, $resistance)
+    public function __construct($name, $energyType, $hitpoints, $health, $attacks, $weakness, $resistance)
     {
         $this->name = $name;
         $this->energyType = $energyType;
@@ -24,7 +24,7 @@ abstract class Pokemon {
         // if else check on pokemon weakness
         if ($energyType == $this->weakness->energyType){
             // new damage value based on target weakness
-            $damage = $hitpoints * $this->weakness->value;
+            $damage = $hitpoints * $this->weakness->value; 
             $this->health -= $damage; 
         } elseif($this->resistance->energyType == $energyType) {
             $damage = $hitpoints - $target->resistance->value;
