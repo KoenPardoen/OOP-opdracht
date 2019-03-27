@@ -2,12 +2,12 @@
 
 abstract class Pokemon {
     // private maken kunnen oproepen met een __get($property)
-    protected $name; 
-    protected $energyType;
-    protected $health;
-    protected $attacks = [];
-    protected $weakness;
-    protected $resistance;
+    private $name; 
+    private $energyType;
+    private $health;
+    private $attacks = [];
+    private $weakness;
+    private $resistance;
    
     public function __construct($name, $energyType, $hitpoints, $health, $attacks, $weakness, $resistance)
     {
